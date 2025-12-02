@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>马克思主义基本原理</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* 基础样式 - 确保浏览器兼容性 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", "Segoe UI", sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        /* 头部样式 */
+        header {
+            background: linear-gradient(to right, #c20c0c, #8B0000);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* 导航样式 */
+        nav {
+            background-color: #8B0000;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .nav-item {
+            color: white;
+            padding: 0.5rem 1.5rem;
+            margin: 0.2rem;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-item:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* 主要内容区域 */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .section-title {
+            color: #8B0000;
+            border-left: 5px solid #c20c0c;
+            padding-left: 1rem;
+            margin: 2rem 0 1.5rem 0;
+            font-size: 1.8rem;
+        }
+        
+        .intro {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+        
+        /* 卡片式内容布局 */
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .card {
+            flex: 1 1 300px;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 4px solid #c20c0c;
+        }
+        
+        .card-content {
+            padding: 1.5rem;
+        }
+        
+        .card-title {
+            color: #8B0000;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        /* 引言区域 */
+        .quote {
+            background-color: #f0f0f0;
+            border-left: 5px solid #8B0000;
+            padding: 2rem;
+            margin: 2rem 0;
+            font-style: italic;
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+        
+        .quote-author {
+            text-align: right;
+            margin-top: 1rem;
+            font-weight: bold;
+            color: #555;
+        }
+        
+        /* 图片展示区 */
+        .figure-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .figure {
+            text-align: center;
+            max-width: 300px;
+        }
+        
+        .figure img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .figure-caption {
+            margin-top: 0.5rem;
+            font-weight: bold;
+            color: #555;
+        }
+        
+        /* 页脚样式 */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .footer-links {
+            margin: 1rem 0;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            margin-top: 1.5rem;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .card-container {
+                flex-direction: column;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-item {
+                width: 80%;
+                text-align: center;
+                margin: 0.2rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部区域 -->
+    <header>
+        <h1><i class="fas fa-fist-raised"></i> 马克思主义基本原理</h1>
+        <p>马克思主义是科学的理论、人民的理论、实践的理论、不断发展的开放的理论</p>
+    </header>
+    
+    <!-- 导航栏 -->
+    <nav>
+        <div class="nav-container">
+            <a href="#intro" class="nav-item"><i class="fas fa-home"></i> 马克思主义概述</a>
+            <a href="#philosophy" class="nav-item"><i class="fas fa-brain"></i> 马克思主义哲学</a>
+            <a href="#economics" class="nav-item"><i class="fas fa-chart-line"></i> 政治经济学</a>
+            <a href="#socialism" class="nav-item"><i class="fas fa-users"></i> 科学社会主义</a>
+            <a href="#figures" class="nav-item"><i class="fas fa-user-friends"></i> 重要人物</a>
+        </div>
+    </nav>
+    
+    <!-- 主要内容容器 -->
+    <div class="container">
+        <!-- 简介部分 -->
+        <section id="intro">
+            <h2 class="section-title">马克思主义概述</h2>
+            <div class="intro">
+                <p>马克思主义是由卡尔·马克思和弗里德里希·恩格斯创立并为后继者所发展的科学理论体系，是关于自然、社会和人类思维发展一般规律的学说，是关于社会主义必然代替资本主义、最终实现共产主义的学说，是关于无产阶级解放、全人类解放和每个人自由而全面发展的学说。</p>
+                <p>马克思主义包括马克思主义哲学、马克思主义政治经济学和科学社会主义三个基本组成部分，它们有机统一并共同构成了马克思主义理论体系。</p>
+                <p>马克思主义基本原理是对马克思主义立场、观点、方法的集中概括，是马克思主义在其形成、发展和运用过程中经过实践反复检验而确立起来的具有普遍真理性的理论。</p>
+            </div>
+        </section>
+        
+        <!-- 引言部分 -->
+        <div class="quote">
+            "哲学家们只是用不同的方式解释世界，而问题在于改变世界。"
+            <div class="quote-author">——卡尔·马克思《关于费尔巴哈的提纲》</div>
+        </div>
+        
+        <!-- 三个组成部分 -->
+        <section id="philosophy">
+            <h2 class="section-title">马克思主义的三大组成部分</h2>
+            <div class="card-container">
+                <!-- 马克思主义哲学 -->
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="辩证法" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">马克思主义哲学</h3>
+                        <p>马克思主义哲学包括辩证唯物主义和历史唯物主义，是马克思主义的世界观和方法论。</p>
+                        <ul>
+                            <li><strong>辩证唯物主义</strong>：关于自然、社会和思维发展的普遍规律的科学</li>
+                            <li><strong>历史唯物主义</strong>：关于人类社会发展一般规律的科学</li>
+                            <li><strong>实践观点</strong>：马克思主义哲学的首要的和基本的观点</li>
+                            <li><strong>矛盾分析法</strong>：认识世界和改造世界的根本方法</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- 政治经济学 -->
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1011&q=80" alt="资本论" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">马克思主义政治经济学</h3>
+                        <p>马克思主义政治经济学揭示了资本主义经济的运动规律，阐明了剩余价值理论。</p>
+                        <ul>
+                            <li><strong>劳动价值论</strong>：商品二因素和劳动二重性</li>
+                            <li><strong>剩余价值理论</strong>：揭示资本主义剥削的秘密</li>
+                            <li><strong>资本主义基本矛盾</strong>：生产社会化与生产资料私人占有</li>
+                            <li><strong>经济危机理论</strong>：资本主义制度不可避免的周期性危机</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- 科学社会主义 -->
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1176&q=80" alt="社会主义" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">科学社会主义</h3>
+                        <p>科学社会主义阐明了由资本主义社会转变为社会主义、共产主义社会的客观规律。</p>
+                        <ul>
+                            <li><strong>两个必然</strong>：资本主义必然灭亡，社会主义必然胜利</li>
+                            <li><strong>无产阶级革命</strong>：社会主义代替资本主义的根本途径</li>
+                            <li><strong>无产阶级专政</strong>：从资本主义到共产主义的过渡时期的国家形式</li>
+                            <li><strong>人的全面发展</strong>：共产主义社会的根本特征</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 重要人物 -->
+        <section id="figures">
+            <h2 class="section-title">马克思主义创始人及重要发展者</h2>
+            <div class="figure-container">
+                <div class="figure">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Karl_Marx_001.jpg/220px-Karl_Marx_001.jpg" alt="卡尔·马克思">
+                    <div class="figure-caption">卡尔·马克思 (1818-1883)</div>
+                    <p>马克思主义创始人，无产阶级革命导师</p>
+                </div>
+                <div class="figure">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Friedrich_Engels_portrait.jpg/220px-Friedrich_Engels_portrait.jpg" alt="弗里德里希·恩格斯">
+                    <div class="figure-caption">弗里德里希·恩格斯 (1820-1895)</div>
+                    <p>马克思主义创始人，马克思的亲密战友</p>
+                </div>
+                <div class="figure">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Vladimir_Lenin_%28cropped%29.jpg/220px-Vladimir_Lenin_%28cropped%29.jpg" alt="列宁">
+                    <div class="figure-caption">列宁 (1870-1924)</div>
+                    <p>马克思主义的继承与发展者，领导十月革命</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 马克思主义在中国的发展 -->
+        <section id="socialism">
+            <h2 class="section-title">马克思主义中国化时代化</h2>
+            <div class="intro">
+                <p>马克思主义是不断发展开放的理论体系。中国共产党把马克思主义基本原理同中国具体实际相结合、同中华优秀传统文化相结合，不断推进马克思主义中国化时代化，形成了毛泽东思想、邓小平理论、"三个代表"重要思想、科学发展观、习近平新时代中国特色社会主义思想，为中国特色社会主义事业提供了科学理论指导。</p>
+                <p>马克思主义在中国的发展充分证明了其强大的生命力，中国特色社会主义进入新时代，科学社会主义在二十一世纪的中国焕发出强大生机活力。</p>
+            </div>
+        </section>
+        
+        <!-- 另一条引言 -->
+        <div class="quote">
+            "理论一经掌握群众，也会变成物质力量。理论只要说服人，就能掌握群众；而理论只要彻底，就能说服人。所谓彻底，就是抓住事物的根本。"
+            <div class="quote-author">——卡尔·马克思《黑格尔法哲学批判》导言</div>
+        </div>
+    </div>
+    
+    <!-- 页脚 -->
+    <footer>
+        <div class="footer-content">
+            <h3>马克思主义基本原理宣传网页</h3>
+            <p>坚持和发展马克思主义，用马克思主义观察时代、把握时代、引领时代</p>
+            <div class="footer-links">
+                <a href="#intro">马克思主义概述</a>
+                <a href="#philosophy">马克思主义哲学</a>
+                <a href="#economics">政治经济学</a>
+                <a href="#socialism">科学社会主义</a>
+            </div>
+            <div class="copyright">
+                <p>本页面用于马克思主义基本原理宣传教育 | 兼容所有主流浏览器</p>
+                <p>© 2023 马克思主义理论学习网站</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- 简单的滚动效果 -->
+    <script>
+        // 平滑滚动到锚点
+        document.querySelectorAll('.nav-item').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // 添加卡片悬停效果
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.boxShadow = '0 8px 16px rgba(139, 0, 0, 0.2)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.08)';
+            });
+        });
+    </script>
+</body>
+</html>
